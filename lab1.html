@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="lab.js"></script>
+    <title>Методы оптимизации производства</title>
+</head>
+<body>
+    <div class="container">
+		<p>Загрузите файл: <input type="file" id="loadfile"></p>
+        <div class="form">
+            <p>Введите параметры (по вертикали — станки, по горизонтали — время обработки):</p>
+            <textarea rows="10" cols="60" id="params"></textarea>
+            <p>Ввод времени через запятую без пробелов, новый станок с новой строки</p>
+            <p>Методы:</p>
+            <p><input type="radio" name="methods" value="johnson" id="johnson" checked> <label for="johnson">Метод Джонсона</label></p>
+            <p><input type="radio" name="methods" value="sokol" id="sokol"> <label for="sokol">Метод Петрова-Соколицына</label></p>
+            <input type="button" value="Рассчитать" id="calculate">
+        </div>
+        <p id="sourceTime"></p>
+        <div class="errors" hidden id="errors">
+
+        </div>
+        <p id="results"></p>
+        <p id="query"></p>
+        <canvas id="gantt" width="600" height="200" hidden></canvas>
+        <p id="first-text" hidden><b>Последовательность из первых сумм по убыванию</b></p>
+        <p id="first-time-result"></p>
+        <p id="first-query"></p>
+        <canvas id="first-gantt" width="600" height="200" hidden></canvas>
+        <p id="second-text" hidden><b>Последовательность из вторых сумм по возрастанию</b></p>
+        <p id="second-time-result"></p>
+        <p id="second-query"></p>
+        <canvas id="second-gantt" width="600" height="200" hidden></canvas>
+        <p id="diff-text" hidden><b>Последовательность из разниц между вторыми и первыми суммами по убыванию</b></p>
+        <p id="diff-time-result"></p>
+        <p id="diff-query"></p>
+        <canvas id="diff-gantt" width="600" height="200" hidden></canvas>
+        <p id="abs-diff-text" hidden><b>Последовательность из абсолютного модуля разниц между вторыми и первыми суммами по убыванию</b></p>
+        <p id="abs-diff-time-result"></p>
+        <p id="abs-diff-query"></p>
+        <p id="diagrams-gantt-text" hidden><b>Диаграммы Ганта:</b></p>
+        <canvas id="abs-diff-gantt" width="600" height="200" hidden></canvas>
+    </div>
+</body>
+</html>
